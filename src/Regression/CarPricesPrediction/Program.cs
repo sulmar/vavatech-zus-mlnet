@@ -25,6 +25,7 @@ internal class Program
 
         // 5. Budowanie modelu
         var pipeline = context.Transforms.Concatenate("Features", nameof(CarData.Mileage))
+            .Append(context.Transforms.NormalizeMinMax("Features")) // Normalizacja danych Min-Max - przekształca wartości w zbiorze danych na przedział [0,1] lub [-1, 1]
             .Append(trainer);
 
         // 6. Trenowanie modelu na danych treningowych (TrainSet) 80%
