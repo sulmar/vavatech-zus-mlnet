@@ -1,8 +1,8 @@
-# ML.NET
+# Machine Learning and AI with ML.NET
 
 ## Introduction
 
-Welcome! This is the course repository for ML.NET in C#
+Welcome! This is the course repository for Machine Learning and AI with ML.NET
 
 To take this course you'll need the following.
 
