@@ -1,0 +1,81 @@
+InvoiceID,Amount,Description,MPK,IsIncorrect
+1,1000.00,Zakup materiałów biurowych,001,0
+2,25000.00,Zakup sprzętu IT,002,0
+3,150.00,Lunch z klientem,003,0
+4,3000.00,Naprawa samochodu firmowego,004,0
+5,5000.00,Konsultacje prawne,005,0
+6,700.00,Usługi marketingowe,001,1
+7,12000.00,Zakup laptopów,002,0
+8,450.00,Kurs języka angielskiego dla pracowników,003,1
+9,35000.00,Wyposażenie biura,006,0
+10,2000.00,Zakup oprogramowania,002,0
+11,800.00,Kolacja biznesowa,003,0
+12,7000.00,Koszty rekrutacji,007,0
+13,250.00,Kwiaty na uroczystość firmową,001,1
+14,20000.00,Modernizacja serwerowni,002,0
+15,1500.00,Naprawa sprzętu komputerowego,002,0
+16,50.00,Kawa i przekąski,001,0
+17,4500.00,Projekt graficzny strony internetowej,005,0
+18,500.00,Książki branżowe,003,0
+19,18000.00,Organizacja konferencji,008,0
+20,1000.00,Opłata za usługi kurierskie,001,0
+21,600.00,Usługi szkoleniowe,001,1
+22,80000.00,Remont biura,009,0
+23,900.00,Wyjazd integracyjny,003,1
+24,450.00,Opłata za media,004,0
+25,1200.00,Naprawa drukarki,002,0
+26,150.00,Ekspres do kawy,001,0
+27,1000.00,Artykuły biurowe,001,0
+28,5000.00,Zakup laptopa,002,0
+29,150000.00,Zakup serwera,003,1
+30,300.00,Kawa dla pracowników,001,0
+31,2200.00,Subskrypcja oprogramowania,002,0
+32,750.00,Szkolenie z Excela,003,1
+33,45000.00,Nowa drukarka 3D,006,0
+34,600.00,Usługi sprzątające,004,0
+35,9500.00,Kampania reklamowa,005,0
+36,120.00,Prezenty dla klientów,001,1
+37,1800.00,Naprawa klimatyzacji,004,0
+38,30000.00,Zakup mebli biurowych,006,0
+39,400.00,Kurs programowania,003,1
+40,2500.00,Licencja na oprogramowanie,002,0
+41,850.00,Spotkanie z dostawcami,003,0
+42,6500.00,Serwis samochodów służbowych,004,0
+43,200.00,Artykuły higieniczne,001,0
+44,15000.00,Modernizacja sieci Wi-Fi,002,0
+45,1100.00,Usługi księgowe,005,0
+46,80.00,Przekąski na spotkanie,001,0
+47,3200.00,Projekt logo firmy,005,0
+48,600.00,Literatura specjalistyczna,003,0
+49,25000.00,Szkolenie menedżerskie,008,0
+50,900.00,Dostawa materiałów biurowych,001,0
+51,700.00,Koszty podróży służbowej,003,1
+52,60000.00,Nowa serwerownia,009,0
+53,350.00,Opłata za internet,004,0
+54,1400.00,Naprawa projektora,002,0
+55,2000.00,Zakup monitorów,002,0
+56,300.00,Decoracje biurowe,001,1
+57,8500.00,Konsultacje IT,005,0
+58,450.00,Bilety na konferencję,003,0
+59,37000.00,Remont sali konferencyjnej,006,0
+60,1200.00,Usługi kurierskie,001,0
+61,500.00,Szkolenie BHP,003,1
+62,9500.00,Zakup drukarek,002,0
+63,100.00,Kawa i herbata,001,0
+64,28000.00,Organizacja eventu firmowego,008,0
+65,1600.00,Naprawa systemu alarmowego,004,0
+66,4000.00,Usługi prawne,005,0
+67,250.00,Prezenty dla pracowników,001,1
+68,1800.00,Zakup akcesoriów biurowych,001,0
+69,32000.00,Modernizacja biura,009,0
+70,600.00,Kurs online dla zespołu,003,1
+71,7500.00,Zakup projektora,002,0
+72,900.00,Opłata za energię,004,0
+73,2000.00,Subskrypcja chmury,002,0
+74,150.00,Kanapki na spotkanie,001,0
+75,4500.00,Kampania social media,005,0
+76,700.00,Literatura techniczna,003,0
+77,50000.00,Nowa flota samochodów,006,0
+78,1100.00,Dostawa sprzętu IT,002,0
+79,300.00,Koszty parkingu,004,0
+80,850.00,Wyjazd szkoleniowy,003,1
