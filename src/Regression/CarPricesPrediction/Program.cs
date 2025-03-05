@@ -15,7 +15,7 @@ internal class Program
         var context = new MLContext();
 
         // 2. Wczytujemy dane z pliku CSV
-        var trainingData = context.Data.LoadFromTextFile<CarData>("car-prices.csv", hasHeader: true, separatorChar: ',');
+        var trainingData = context.Data.LoadFromTextFile<CarData>("car-model-prices.csv", hasHeader: true, separatorChar: ',');
 
         // 3. Dzielimy dane wejściowe na zbiór treningowy i testowy (20% testowy)
         var testTrainSplit = context.Data.TrainTestSplit(trainingData, testFraction: 0.2f);
@@ -24,9 +24,11 @@ internal class Program
         var trainer = context.Regression.Trainers.LbfgsPoissonRegression();
 
         // 5. Budowanie modelu
-        var pipeline = context.Transforms.Concatenate("Features", nameof(CarData.Mileage))
+        var pipeline = 
+            context.Transforms.Categorical.OneHotEncoding(outputColumnName: "ModelEncoded", inputColumnName: "Model") // Kodowanie kategorii za pomocą OneHotEncoding
+            .Append(context.Transforms.Concatenate("Features", nameof(CarData.Mileage), "ModelEncoded")
             .Append(context.Transforms.NormalizeMinMax("Features")) // Normalizacja danych Min-Max - przekształca wartości w zbiorze danych na przedział [0,1] lub [-1, 1]
-            .Append(trainer);
+            .Append(trainer));
 
         // 6. Trenowanie modelu na danych treningowych (TrainSet) 80%
         var model = pipeline.Fit(testTrainSplit.TrainSet);
@@ -42,7 +44,7 @@ internal class Program
 
         // 8. Predykcja dla nowego przypadku
 
-        var newCarData = new CarData { Mileage = 50_000 };
+        var newCarData = new CarData { Mileage = 50_000, Model = "Toyota" };
 
         // 9. Tworzenie silnika predykcyjnego
         var predictionEngine = context.Model.CreatePredictionEngine<CarData, CarPricePrediction>(model);
@@ -64,6 +66,9 @@ public class CarData
 
     [LoadColumn(1), ColumnName("Label")]
     public float Price;
+
+    [LoadColumn(2)]
+    public string Model;
 }
 
 
