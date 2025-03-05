@@ -26,9 +26,10 @@ internal class Program
         // 5. Budowanie modelu
         var pipeline = 
             context.Transforms.Categorical.OneHotEncoding(outputColumnName: "ModelEncoded", inputColumnName: "Model") // Kodowanie kategorii za pomocą OneHotEncoding
-            .Append(context.Transforms.Concatenate("Features", nameof(CarData.Mileage), "ModelEncoded")
+            .Append(context.Transforms.CustomMapping<CarData, CarDateWithAge>(MapRegistrationToAge, "CalculateAge")
+            .Append(context.Transforms.Concatenate("Features", nameof(CarData.Mileage), "ModelEncoded", "Age")
             .Append(context.Transforms.NormalizeMinMax("Features")) // Normalizacja danych Min-Max - przekształca wartości w zbiorze danych na przedział [0,1] lub [-1, 1]
-            .Append(trainer));
+            .Append(trainer)));
 
         // 6. Trenowanie modelu na danych treningowych (TrainSet) 80%
         var model = pipeline.Fit(testTrainSplit.TrainSet);
@@ -44,7 +45,7 @@ internal class Program
 
         // 8. Predykcja dla nowego przypadku
 
-        var newCarData = new CarData { Mileage = 50_000, Model = "Toyota" };
+        var newCarData = new CarData { Mileage = 50_000, Model = "Toyota", RegistrationDate = DateTime.Parse("2023-03-01") };
 
         // 9. Tworzenie silnika predykcyjnego
         var predictionEngine = context.Model.CreatePredictionEngine<CarData, CarPricePrediction>(model);
@@ -56,6 +57,17 @@ internal class Program
         Console.WriteLine($"Prediction: {prediction.PredictedPrice}");
 
         Console.ReadLine();
+    }
+
+    // Adapter
+    private static void MapRegistrationToAge(CarData input, CarDateWithAge output)
+    {
+        DateTime currentDate = DateTime.Parse("2025-03-05");
+
+        output.Mileage = input.Mileage;
+        output.Price = input.Price;
+        output.Model = input.Model;
+        output.Age = (float) (currentDate - input.RegistrationDate).TotalDays / 365.25f;
     }
 }
 
@@ -69,8 +81,20 @@ public class CarData
 
     [LoadColumn(2)]
     public string Model;
+
+    [LoadColumn(3)]
+    public DateTime RegistrationDate;
 }
 
+
+public class CarDateWithAge 
+{
+    public float Mileage;
+    public float Price;
+    public string Model;
+    public float Age; // Wiek pojazdu w latach
+
+}
 
 public class CarPricePrediction
 {
