@@ -15,7 +15,7 @@ var trainingData = context.Data.LoadFromTextFile<SalaryData>("salary-data.csv", 
 // 3. Dzielimy dane wejściowe na zbiór treningowy i testowy (20% testowy)
 var testTrainSplit = context.Data.TrainTestSplit(trainingData, testFraction: 0.2f);
 
-// 4. Wybór algorytmu - w tym przypadku regresji liniowej
+// 4. Wybór algorytmu - wybieram Catalog klasyfikacji regresji liniowej
 var trainer = context.Regression.Trainers.LbfgsPoissonRegression();
 
 // 5. Budowanie modelu
