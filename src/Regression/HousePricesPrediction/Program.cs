@@ -75,6 +75,28 @@ internal class Program
         Console.WriteLine($"MEA: {metrics.MeanAbsoluteError}"); // Średni błąd w jednostkach ceny
         Console.WriteLine($"RMSE: {metrics.RootMeanSquaredError}"); // Wskazuje, jak bardzo predykcje odbiegają od rzeczywistych wartości
 
+        // Wykonanie walidacji krzyżowej
+        var cvResults = context.Regression.CrossValidate(trainingData, pipeline, labelColumnName: "Price");
+
+        Console.WriteLine("Wyniki walidacji krzyżowej:");
+        foreach (var result in cvResults)
+        {
+            Console.WriteLine($"R^2: {result.Metrics.RSquared}"); // Współczynnik determinacji R^2
+            Console.WriteLine($"MEA: {result.Metrics.MeanAbsoluteError}"); // Średni błąd w jednostkach ceny
+            Console.WriteLine($"RMSE: {result.Metrics.RootMeanSquaredError}"); // Wskazuje, jak bardzo predykcje odbiegają od rzeczywistych wartości
+        }
+
+        Console.WriteLine("Uśrednione wyniki walidacji krzyżowej:");
+
+        var avgRSquared = cvResults.Average(r => r.Metrics.RSquared);
+        var avgMEA = cvResults.Average(r => r.Metrics.MeanAbsoluteError);
+        var avgRMSE = cvResults.Average(r => r.Metrics.RootMeanSquaredError);
+
+        Console.WriteLine($"R^2: {avgRSquared}"); // Współczynnik determinacji R^2
+        Console.WriteLine($"MEA: {avgMEA}"); // Średni błąd w jednostkach ceny
+        Console.WriteLine($"RMSE: {avgRMSE}"); // Wskazuje, jak bardzo predykcje odbiegają od rzeczywistych wartości
+
+
         // 8. Predykcja dla nowego przypadku
         var newHouseData = new HouseData
         {
