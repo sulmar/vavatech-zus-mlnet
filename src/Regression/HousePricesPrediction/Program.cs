@@ -55,11 +55,14 @@ internal class Program
         var testTrainSplit = context.Data.TrainTestSplit(trainingData, testFraction: 0.2f);
 
         // 4. Wybór algorytmu - w tym przypadku regresji liniowej
-        var trainer = context.Regression.Trainers.LbfgsPoissonRegression(labelColumnName: "Price");
+        // var trainer = context.Regression.Trainers.LbfgsPoissonRegression(labelColumnName: "Price");
+
+        var trainer = context.Regression.Trainers.Sdca(labelColumnName: "Price");
 
         // 5. Budowanie modelu
         var pipeline = context.Transforms.Categorical.OneHotEncoding("LocationEncoded", "Location")
             .Append(context.Transforms.Concatenate("Features", "Size", "LocationEncoded", "Bedrooms"))
+            .Append(context.Transforms.NormalizeMinMax("Features"))
             .Append(trainer);
 
 
