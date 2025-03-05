@@ -12,5 +12,5 @@ To take this course you'll need the following.
 ## Clone the Course Git Repository
 
 ```
-git clone https://github.com/your-mlnet
+git clone https://github.com/vavatech-zus-mlnet
 ```
