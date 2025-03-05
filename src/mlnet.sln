@@ -7,21 +7,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Regression", "Regression", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryPrediction", "Regression\SalaryPrediction\SalaryPrediction.csproj", "{BA5A97EF-50F1-4DA2-AE59-A228C115604D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPricesPrediction", "Regression\CarPricesPrediction\CarPricesPrediction.csproj", "{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BA5A97EF-50F1-4DA2-AE59-A228C115604D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BA5A97EF-50F1-4DA2-AE59-A228C115604D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA5A97EF-50F1-4DA2-AE59-A228C115604D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA5A97EF-50F1-4DA2-AE59-A228C115604D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BA5A97EF-50F1-4DA2-AE59-A228C115604D} = {97FA0FC8-D03D-4E43-BFE7-0916B398406A}
+		{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B} = {97FA0FC8-D03D-4E43-BFE7-0916B398406A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFC0714A-5FC3-4203-80DC-0AA5F97B61C7}
 	EndGlobalSection
 EndGlobal
