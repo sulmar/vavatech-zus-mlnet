@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSentimentAnalysis", "Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterConsumptionPrediction", "Regression\WaterConsumptionPrediction\WaterConsumptionPrediction.csproj", "{8117C2A4-B93A-4241-A387-0749B407F67F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnomalyDetection", "AnomalyDetection", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRateAnomalyDetection", "AnomalyDetection\CurrencyRateAnomalyDetection\CurrencyRateAnomalyDetection.csproj", "{FDC8332E-A35F-4419-A36F-7251C977F2D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{8117C2A4-B93A-4241-A387-0749B407F67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8117C2A4-B93A-4241-A387-0749B407F67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8117C2A4-B93A-4241-A387-0749B407F67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC8332E-A35F-4419-A36F-7251C977F2D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC8332E-A35F-4419-A36F-7251C977F2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC8332E-A35F-4419-A36F-7251C977F2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC8332E-A35F-4419-A36F-7251C977F2D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{ED60FE93-32DB-4310-A3C0-BB3A063E2162} = {EC636B11-5F83-4489-84A6-CB77C298A5E4}
 		{EC98071B-5ED1-4DE8-8681-12FC132EE329} = {EC636B11-5F83-4489-84A6-CB77C298A5E4}
 		{8117C2A4-B93A-4241-A387-0749B407F67F} = {97FA0FC8-D03D-4E43-BFE7-0916B398406A}
+		{FDC8332E-A35F-4419-A36F-7251C977F2D9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFC0714A-5FC3-4203-80DC-0AA5F97B61C7}
