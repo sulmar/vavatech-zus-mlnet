@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRateAnomalyDetectio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureSpikeDetection", "AnomalyDetection\TemperatureSpikeDetection\TemperatureSpikeDetection.csproj", "{71A3D5D6-73CD-4510-AEC5-0E29490FF464}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MultiClassClassification", "MultiClassClassification", "{1D4B5235-530E-4672-BDC5-60F2180CB345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorefxIssuesPrediction", "MultiClassClassification\CorefxIssuesPrediction\CorefxIssuesPrediction.csproj", "{695C2A53-9564-42C6-B604-238338F1086E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{71A3D5D6-73CD-4510-AEC5-0E29490FF464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71A3D5D6-73CD-4510-AEC5-0E29490FF464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71A3D5D6-73CD-4510-AEC5-0E29490FF464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695C2A53-9564-42C6-B604-238338F1086E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695C2A53-9564-42C6-B604-238338F1086E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695C2A53-9564-42C6-B604-238338F1086E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695C2A53-9564-42C6-B604-238338F1086E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +84,7 @@ Global
 		{8117C2A4-B93A-4241-A387-0749B407F67F} = {97FA0FC8-D03D-4E43-BFE7-0916B398406A}
 		{FDC8332E-A35F-4419-A36F-7251C977F2D9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{71A3D5D6-73CD-4510-AEC5-0E29490FF464} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{695C2A53-9564-42C6-B604-238338F1086E} = {1D4B5235-530E-4672-BDC5-60F2180CB345}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFC0714A-5FC3-4203-80DC-0AA5F97B61C7}
