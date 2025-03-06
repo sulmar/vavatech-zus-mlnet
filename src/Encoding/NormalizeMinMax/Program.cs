@@ -22,10 +22,10 @@ var dataView = context.Data.LoadFromEnumerable(data);
 var pipeline = context.Transforms.NormalizeMinMax("NormalizedValue", "Value");
 
 // Dopasowanie potoku 
-var transformer = pipeline.Fit(dataView);
+var transformer = pipeline.Fit(dataView); // Fit patrzy na dane [10, 20, 15, 30, 5] i ustala, że min = 5, max = 30
 
 // Przetwarzanie danych
-var transformedData = transformer.Transform(dataView);
+var transformedData = transformer.Transform(dataView); // potem używa tych wartości, aby przekształcić np. 15 na 0.4
 
 // Konwersja z powrotem z celu wyświetlenia danych
 var normalizedData = context.Data.CreateEnumerable<NormalizedNumberData>(transformedData, reuseRowObject: false);
