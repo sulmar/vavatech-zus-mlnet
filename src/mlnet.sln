@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encoding", "Encoding", "{BB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneHotEncoding", "Encoding\OneHotEncoding\OneHotEncoding.csproj", "{089C1A31-237D-4E7D-A157-557AF9CCCFDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeaturizeText", "Encoding\FeaturizeText\FeaturizeText.csproj", "{47290936-8097-44B4-976F-754E1D3F401B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{089C1A31-237D-4E7D-A157-557AF9CCCFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{089C1A31-237D-4E7D-A157-557AF9CCCFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{089C1A31-237D-4E7D-A157-557AF9CCCFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47290936-8097-44B4-976F-754E1D3F401B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47290936-8097-44B4-976F-754E1D3F401B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47290936-8097-44B4-976F-754E1D3F401B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47290936-8097-44B4-976F-754E1D3F401B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{695C2A53-9564-42C6-B604-238338F1086E} = {1D4B5235-530E-4672-BDC5-60F2180CB345}
 		{02CB9E6A-D24C-4E06-80FE-EA361ADF18DF} = {162E8F6A-C05E-4D48-929A-DA20F1895430}
 		{089C1A31-237D-4E7D-A157-557AF9CCCFDE} = {BBB1D211-8301-40B7-ADD5-C6A93C360BBD}
+		{47290936-8097-44B4-976F-754E1D3F401B} = {BBB1D211-8301-40B7-ADD5-C6A93C360BBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFC0714A-5FC3-4203-80DC-0AA5F97B61C7}
