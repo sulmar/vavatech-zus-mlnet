@@ -45,7 +45,7 @@ var dataView = context.Data.LoadFromEnumerable(temperatureData);
 var pipeline = context.Transforms.DetectIidSpike(
     outputColumnName: nameof(TemperaturePrediction.Prediction),
     inputColumnName: nameof(TemperatureData.Temperature),
-    confidence: 95d, // Zakres 0..100
+    confidence: 95d, // Poziom ufności definiuje, jak "pewny" musi być model, aby uznać punkt za anomalię. Zakres 0..100 
     pvalueHistoryLength: temperatureData.Count / 2);
 
 // 5. Trenowanie modelu
