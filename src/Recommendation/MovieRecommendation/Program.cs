@@ -86,3 +86,6 @@ public class MovieRatingPrediction
     public float Score { get; set; }
 
 }
+
+/// Inny przykład
+// https://github.com/dotnet/machinelearning-samples/blob/main/samples/csharp/getting-started/MatrixFactorization_ProductRecommendation/ProductRecommender/Program.cs
