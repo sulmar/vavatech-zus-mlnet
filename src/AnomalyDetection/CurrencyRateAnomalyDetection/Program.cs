@@ -12,62 +12,57 @@ var context = new MLContext();
 // 2. Wczytujemy dane z pliku CSV
 var rates = context.Data.LoadFromTextFile<CurrencyRateRawData>("archiwum_tab_a_2021.csv", hasHeader: true, separatorChar: ';');
 
-var filteredRates = context.Data.SkipRows(rates, 1);
+var dataView = context.Data.SkipRows(rates, 1);
 
-var preview = filteredRates.Preview();
+// Konwersja IDataView na List<T> 
+List<CurrencyRateRawData> dataList = context.Data.CreateEnumerable<CurrencyRateRawData>(dataView, reuseRowObject: false).ToList();
 
-// 3. Dzielimy dane wejściowe na zbiór treningowy i testowy (20% testowy)
-var testTrainSplit = context.Data.TrainTestSplit(filteredRates, testFraction: 0.2f);
-
-// 4. Wybór algorytmu
+// 3. Tworzenie pipeline'a z użyciem IidSpikeDetector
 
 // dotnet add package Microsoft.ML.TimeSeries
 var trainer = context.Transforms.DetectIidSpike(
-    outputColumnName: "Prediction", inputColumnName: "EUR", confidence: 95d, pvalueHistoryLength: 50);
+    outputColumnName: "Prediction", 
+    inputColumnName: "EUR", 
+    confidence: 95d,  // Poziom ufności definiuje, jak "pewny" musi być model, aby uznać punkt za anomalię. Zakres 0..100 
+    pvalueHistoryLength: dataList.Count / 2);
 
-// 5. Budowanie modelu
 
+// Utworzenie mapowania daty
 Action<CurrencyRateRawData, CurrencyRateData> mapper = (input, output) =>
 {
     output.Date = DateTime.ParseExact(input.Date, "yyyyMMdd", CultureInfo.InvariantCulture);
     output.EUR = input.EUR;
-    
 };
 
+// 4. Budowanie modelu
 var pipeline = context.Transforms.CustomMapping(mapper, "DateMapper")
     .Append(trainer);
 
-// 6. Trenowanie modelu 
-var model = pipeline.Fit(testTrainSplit.TrainSet);
+// 5. Trenowanie modelu
+var model = pipeline.Fit(dataView);
 
-// 7. Ewaluacja modelu na zbiorze testowym (TestSet) 20%
-var predictions = model.Transform(testTrainSplit.TestSet);
-
-var predictionResults = context.Data.CreateEnumerable<CurrencyRatePrediction>(predictions, reuseRowObject: false)
-    .ToList();
+// 6. Przekształcenie danych i predykcja
+var predictions = model.Transform(dataView);
 
 
-foreach(var result in predictionResults)
+// 7. Pobranie wyników predykcji
+var predictionResults = context.Data.CreateEnumerable<CurrencyRatePrediction>(predictions, reuseRowObject: false);
+
+
+// 8. Wyświetlenie wyników
+Console.WriteLine("Wyniki detekcji anomalii (IidSpikeDetector):");
+int i = 0;
+foreach (var (input, prediction) in dataList.Zip(predictionResults, (d, p) => (d, p)))
 {
-    var prediction = result.Prediction;
-
-    var alert = prediction[0];  // 1 = anomalia, 0 = brak anomalii
-    var score = prediction[1];  // Wartość kursu
-    var pValue = prediction[2]; // p-Value
-
-    if (alert==1)
-    {
+    // Wektor Prediction zawiera 3 wartości: [Alert, P-Value, Score]
+    if (prediction.Alert)
         Console.BackgroundColor = ConsoleColor.Red;
-        Console.ForegroundColor = ConsoleColor.White;
-    }
 
-    Console.WriteLine($"{alert} {score} EUR {pValue}");
+    Console.WriteLine($"Przykład {i + 1}: Date = {input.Date:yyyy-MM-dd}, PValue = {prediction.PValue:F2}, Score = {prediction.Score:F2}, Alert = {prediction.Alert}");
+    i++;
 
     Console.ResetColor();
-
 }
-
-
 
 Console.ReadLine();
 
@@ -89,6 +84,12 @@ public class CurrencyRateData
 
 public class CurrencyRatePrediction
 {
+    // Wynik z IidSpikeDetector to wektor 3-wymiarowy: [Alert, P-Value, Score]
     [VectorType(3)]
-    public double[] Prediction { get; set; } // [Alert, Score, P-Value]
+    public double[] Prediction { get; set; }
+
+    // Wygodne właściwości do odczytu wyników
+    public double PValue => Prediction[1];
+    public double Score => Prediction[2];
+    public bool Alert => Prediction[0] == 1;
 }
