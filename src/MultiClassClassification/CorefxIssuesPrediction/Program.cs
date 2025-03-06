@@ -61,22 +61,36 @@ Console.WriteLine($"LogLoss: {metrics.LogLoss}");
 Console.WriteLine($"LogLossReduction: {metrics.LogLossReduction}");
 
 
-// 8. Predykcja dla nowego przypadku
-var newIssueData = new GitHubIssueData { 
-    Title = "private key",
-    Description = "Enable EnvelopedCms to work with an external private key"
-};
-
-// 9. Tworzenie silnika predykcyjnego
+// 8. Tworzenie silnika predykcyjnego
 var predictionEngine = context.Model.CreatePredictionEngine<GitHubIssueData, GitHubIssueDataPrediction>(model);
 
-// 10. Predykcja obszaru na podstawie opisu zgłoszenia
-var prediction = predictionEngine.Predict(newIssueData);
 
-// 11. Wyświetlenie wyniku predykcji
-Console.WriteLine($"Title: {newIssueData.Title}");
-Console.WriteLine($"Description: {newIssueData.Description}");
-Console.WriteLine($"Predicted Area: {prediction.PredictedArea ?? "NULL"}");
+// 9. Predykcja dla nowego przypadku
+
+while (true)
+{
+    Console.Write("Title > ");
+    var title = Console.ReadLine();
+
+    Console.Write("Description > ");
+    var description = Console.ReadLine();
+
+    var newIssueData = new GitHubIssueData
+    {
+        Title = title,
+        Description = description
+    };
+
+    // 10. Predykcja obszaru na podstawie opisu zgłoszenia
+    var prediction = predictionEngine.Predict(newIssueData);
+
+    // 11. Wyświetlenie wyniku predykcji
+    Console.WriteLine($"Title: {newIssueData.Title}");
+    Console.WriteLine($"Description: {newIssueData.Description}");
+    Console.WriteLine($"Predicted Area: {prediction.PredictedArea ?? "NULL"}");
+
+}
+
 
 Console.ReadLine();
 
