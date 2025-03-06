@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BinaryClassification", "Bin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceAccountingErrorDetection", "BinaryClassification\InvoiceAccountingErrorDetection\InvoiceAccountingErrorDetection.csproj", "{ED60FE93-32DB-4310-A3C0-BB3A063E2162}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextSentimentAnalysis", "BinaryClassification\TextSentimentAnalysis\TextSentimentAnalysis.csproj", "{EC98071B-5ED1-4DE8-8681-12FC132EE329}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{ED60FE93-32DB-4310-A3C0-BB3A063E2162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED60FE93-32DB-4310-A3C0-BB3A063E2162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED60FE93-32DB-4310-A3C0-BB3A063E2162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC98071B-5ED1-4DE8-8681-12FC132EE329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC98071B-5ED1-4DE8-8681-12FC132EE329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC98071B-5ED1-4DE8-8681-12FC132EE329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC98071B-5ED1-4DE8-8681-12FC132EE329}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{F7D74D0C-F1E7-46DE-B1E4-9CA4D24FD90B} = {97FA0FC8-D03D-4E43-BFE7-0916B398406A}
 		{BF9780FC-4015-49BF-8961-E31D222DF068} = {97FA0FC8-D03D-4E43-BFE7-0916B398406A}
 		{ED60FE93-32DB-4310-A3C0-BB3A063E2162} = {EC636B11-5F83-4489-84A6-CB77C298A5E4}
+		{EC98071B-5ED1-4DE8-8681-12FC132EE329} = {EC636B11-5F83-4489-84A6-CB77C298A5E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFC0714A-5FC3-4203-80DC-0AA5F97B61C7}
