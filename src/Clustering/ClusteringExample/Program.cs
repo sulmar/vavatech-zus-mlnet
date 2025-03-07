@@ -18,7 +18,7 @@ var data = new List<DataPoint>()
 };
 
 // 1. Tworzymy kontekst
-var context = new MLContext();
+var context = new MLContext(seed: 1);
 
 // 2. Ladujemy dane
 IDataView dataView = context.Data.LoadFromEnumerable(data); 
