@@ -69,3 +69,11 @@ public class ClusterPrediction
     public float[] Distances { get; set; } 
     
 }
+
+/*
+ 
+  Klaster 1: Punkty danych 0, 1, 2 - punkty o wartościach w okoliacha 10.0
+  Klaster 2: Punkt danych 3, 4, 5 - punkty o wartościach w okolicach 1.0
+  
+
+*/
