@@ -61,6 +61,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoML", "AutoML", "{4DF272
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiFareRegressionExperiment", "AutoML\TaxiFareRegressionExperiment\TaxiFareRegressionExperiment.csproj", "{B2C7BDFA-2909-49E1-9B30-17EF1B7A9DB7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MLBuilder", "MLBuilder", "{0CF6793A-5FC2-4546-A231-CBEC63D702F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "MLBuilder\ConsoleApp\ConsoleApp.csproj", "{4921AC81-D0FE-4A81-8196-8B695428326B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +155,10 @@ Global
 		{B2C7BDFA-2909-49E1-9B30-17EF1B7A9DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2C7BDFA-2909-49E1-9B30-17EF1B7A9DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2C7BDFA-2909-49E1-9B30-17EF1B7A9DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4921AC81-D0FE-4A81-8196-8B695428326B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4921AC81-D0FE-4A81-8196-8B695428326B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4921AC81-D0FE-4A81-8196-8B695428326B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4921AC81-D0FE-4A81-8196-8B695428326B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,6 +183,7 @@ Global
 		{11387543-79C2-BC17-E81B-1960EBDDE244} = {EC636B11-5F83-4489-84A6-CB77C298A5E4}
 		{94F7B74A-C9C7-E8F5-7457-9506E4DF1099} = {EC636B11-5F83-4489-84A6-CB77C298A5E4}
 		{B2C7BDFA-2909-49E1-9B30-17EF1B7A9DB7} = {4DF27255-4DD8-4BCB-80FE-7EFEDE36E5BD}
+		{4921AC81-D0FE-4A81-8196-8B695428326B} = {0CF6793A-5FC2-4546-A231-CBEC63D702F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFC0714A-5FC3-4203-80DC-0AA5F97B61C7}
