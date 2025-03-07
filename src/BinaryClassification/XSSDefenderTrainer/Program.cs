@@ -13,7 +13,6 @@ MLContext context = new MLContext(seed: 1);
 IDataView dataView =
     context.Data.LoadFromTextFile<XssInput>("XSS_dataset.csv", hasHeader: true, separatorChar: ',', allowQuoting: true);
 
-
 // Podział danych na zbiór treningowy i testowy
 var trainTestSplit = context.Data.TrainTestSplit(dataView, testFraction: 0.2f);
 var trainingData = trainTestSplit.TrainSet;
